@@ -1,0 +1,26 @@
+{
+  "name": "nodejskertaus",
+  "version": "1.0.0",
+  "description": "kerrataan Node-js:n käyttöönottoa",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sadiqa-Khawari/NodeJsKertaus.git"
+  },
+  "keywords": [
+    "Node"
+  ],
+  "author": "Sadiqa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sadiqa-Khawari/NodeJsKertaus/issues"
+  },
+  "homepage": "https://github.com/Sadiqa-Khawari/NodeJsKertaus#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "express-handlebars": "^8.0.3"
+  }
+}
