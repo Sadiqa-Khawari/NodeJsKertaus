@@ -20,6 +20,9 @@ const PORT = process.env.PORT || 8080;
 // Määritellään sovelluksen käyttämät hakemistot
 app.use(express.static('public'));
 
+// URL-Barseri
+app.use(express.urlencoded({ extended: true })); 
+
 // Määritellään sivumallit (templates)
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
@@ -44,6 +47,23 @@ app.get('/about', (req, res) => {
     };
     res.render('about', aboutData);
 });
+
+app.get('/form', (req, res) => {
+    let formData = {
+        'name': '',
+        'surname': ''
+    };
+    res.render('form', formData);
+});
+
+// POST-reitti lomakkeelle
+// POST-reitti lomakkeelle
+app.post('/form', (req, res) => {
+    const { firstname, surname } = req.body;
+    // Datalla saat tiedot talteen esim. Etunimen ja Sukunimen
+    res.send(`Lomake vastaanotettu! Etunimi: ${firstname}, Sukunimi: ${surname} ja ryhmä: ${req.body.group}`);
+});
+
 // PALVELIMEN KÄYNNISTYS
 // ---------------------
 
