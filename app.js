@@ -8,6 +8,9 @@
 const express = require('express');
 const {engine} = require('express-handlebars');
 
+
+const Pool = require('pg').Pool;
+
 // ASETUKSET
 // ---------
 
@@ -27,6 +30,15 @@ app.use(express.urlencoded({ extended: true }));
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 app.set('views', './views');
+
+// Määritellään tietokantayhteyden parametrit
+const pool = new Pool({
+    user: 'websovellus',
+    password: 'Q2werty7',
+    host: '127.0.0.1',
+    port: '5432',
+    database: 'autolainaus'
+});
 
 // URL-REITITYS
 // ------------
